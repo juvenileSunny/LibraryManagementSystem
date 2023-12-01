@@ -24,7 +24,7 @@ class Login(QWidget, login):
     def handle_login(self):
 
 
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
         username = self.lineEdit_3.text()
@@ -158,7 +158,7 @@ class MainApp(QMainWindow, ui):
         # print(today_date, to_date)
 
 
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
         self.cur.execute('''
@@ -173,7 +173,7 @@ class MainApp(QMainWindow, ui):
     def show_all_operation(self):
         self.tableWidget.insertRow(0)
 
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
         self.cur.execute(''' SELECT book_name, client, type, date, to_date  FROM operations ''')
@@ -205,7 +205,7 @@ class MainApp(QMainWindow, ui):
 ##################Books#####################
 
     def show_all_books(self):
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
         self.cur.execute((''' SELECT book_name, book_description, book_ID, book_category, book_author, book_availability FROM books'''))
@@ -222,7 +222,7 @@ class MainApp(QMainWindow, ui):
 
         self.db.close()
     def add_new_books(self):
-        self.db = MySQLdb.connect(host='localhost' , user= 'root', password= 'Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost' , user= 'root', password= '*****', db='Library')
         self.cur = self.db.cursor()
 
         book_name = self.lineEdit_2.text()
@@ -249,7 +249,7 @@ class MainApp(QMainWindow, ui):
         self.show_all_books()
 
     def search_books(self):
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
         book_name = self.lineEdit_4.text()
@@ -269,7 +269,7 @@ class MainApp(QMainWindow, ui):
 
 
     def edit_books(self):
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
         book_name = self.lineEdit_6.text()
@@ -293,7 +293,7 @@ class MainApp(QMainWindow, ui):
 
 
     def remove_books(self):
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
         book_name = self.lineEdit_4.text()
@@ -310,7 +310,7 @@ class MainApp(QMainWindow, ui):
 ###################Client####################
 
     def show_all_client(self):
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
         self.cur.execute((''' SELECT client_name, client_email, client_nid FROM clients'''))
@@ -333,7 +333,7 @@ class MainApp(QMainWindow, ui):
         client_email = self.lineEdit_22.text()
         client_nid = self.lineEdit_23.text()
 
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
         self.cur.execute('''
@@ -351,7 +351,7 @@ class MainApp(QMainWindow, ui):
     def search_client(self):
         client_nid = self.lineEdit_24.text()
 
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
         sql = ''' SELECT * FROM clients WHERE client_nid = %s'''
@@ -369,7 +369,7 @@ class MainApp(QMainWindow, ui):
         client_email = self.lineEdit_29.text()
         client_nid = self.lineEdit_30.text()
 
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
         self.cur.execute('''
@@ -388,7 +388,7 @@ class MainApp(QMainWindow, ui):
         warning_message = QMessageBox.warning(self, "delete Client", "Are you sure?", QMessageBox.Yes | QMessageBox.No)
 
         if warning_message == QMessageBox.Yes:
-            self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+            self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
             self.cur = self.db.cursor()
 
             sql = ''' DELETE FROM clients WHERE client_nid =%s '''
@@ -406,7 +406,7 @@ class MainApp(QMainWindow, ui):
 ###################Users####################
     def add_new_user(self):
 
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
 
@@ -431,7 +431,7 @@ class MainApp(QMainWindow, ui):
         username = self.lineEdit_12.text()
         password = self.lineEdit_11.text()
 
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
         sql = ''' SELECT * FROM users'''
@@ -461,7 +461,7 @@ class MainApp(QMainWindow, ui):
         previous_username = self.lineEdit_12.text()
 
         if password == re_password:
-            self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+            self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
             self.cur = self.db.cursor()
 
 
@@ -482,7 +482,7 @@ class MainApp(QMainWindow, ui):
 
 
     def add_category(self):
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
 
@@ -499,7 +499,7 @@ class MainApp(QMainWindow, ui):
 
 
     def show_category(self):
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
         self.cur.execute(''' SELECT category_name FROM category''')
@@ -518,7 +518,7 @@ class MainApp(QMainWindow, ui):
 
 
     def add_author(self):
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
         author_name = self.lineEdit_18.text()
@@ -533,7 +533,7 @@ class MainApp(QMainWindow, ui):
 
 
     def show_author(self):
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
         self.cur.execute(''' SELECT author_name FROM authors''')
@@ -557,7 +557,7 @@ class MainApp(QMainWindow, ui):
 
 
     def show_category_combo_box(self):
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
         self.cur.execute( ''' SELECT category_name FROM category''' )
@@ -568,7 +568,7 @@ class MainApp(QMainWindow, ui):
             self.comboBox_6.addItem(category[0])
 
     def show_authors_combo_box(self):
-        self.db = MySQLdb.connect(host='localhost', user='root', password='Camry@43684', db='Library')
+        self.db = MySQLdb.connect(host='localhost', user='root', password='*****', db='Library')
         self.cur = self.db.cursor()
 
         self.cur.execute(''' SELECT author_name FROM authors''')
