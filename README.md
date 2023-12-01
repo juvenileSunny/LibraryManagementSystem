@@ -2,8 +2,9 @@
 
 
 ## Tools
-QT Creator, can get student lic for free.
-PyCharm
+QT Creator, can get student lic for free.\\
+PyCharm\\
+MySQLWorkbench
 
 
 ## Clone it
