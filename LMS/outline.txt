@@ -1,0 +1,35 @@
+Library system :
+    - add new book
+    - editing book
+    - remove book
+    - settings - categories, authors
+    - add new user
+    - remove user
+    - user loging, signup [authentication]
+    - book search
+    - book checkout
+    - book return
+    - reports
+
+book :
+    - name
+    - bookID
+    - author
+    - category
+    - availability
+
+users :
+    - username
+    - passwords
+    - email address
+
+transaction :
+    - book name
+    - checkout / return
+    - days
+category :
+    - category name
+author :
+    - author name
+availability :
+    - boolean
